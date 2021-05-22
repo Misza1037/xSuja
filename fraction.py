@@ -21,6 +21,7 @@ class Fraction:
     if len(l) != 2: raise ValueError('')
     self.l = l
   def __str__(self):
+    self.cut()
       return str(self.l[0])+'/'+str(self.l[1])
   def cut(self):
     if self.l[0]//self.l[1] == self.l[0]/self.l[1]:
