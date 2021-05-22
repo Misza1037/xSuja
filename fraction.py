@@ -23,6 +23,9 @@ class Fraction:
   def __str__(self):
       return str(self.l[0])+'/'+str(self.l[1])
   def cut(self):
+    if self.l[1] < 0:
+        self.l[0]*=-1
+        self.l[1]*=-1
     if self.l[0]//self.l[1] == self.l[0]/self.l[1]:
       self.l[0] = self.l[0]//self.l[1]
       self.l[1] = 1
