@@ -21,11 +21,10 @@ class Polynomial:
     return tab
   
   def zwroc_pierwiastki(self, a):
-    tab = []
+    r = []
     for x in a:
-      if f(x) == 0:
-        tab.append(x)
-    return tab
+      if f(x) == 0: r.append(x)
+    return r
   
   def f(self, x):
         sum = 0
