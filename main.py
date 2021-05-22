@@ -1,4 +1,4 @@
-import 'fractions.py'
+import fraction.py
 
 class Polynomial:
     def __init__(self, args):
