@@ -56,9 +56,14 @@ class Fraction:
     return Fraction([self.l[0]*other.l[0], self.l[1]*other.l[1]])
   def __pow__(self, other):
       ######>>> TO DO <<<######
-      # __pow__(<frac>,<frac>)#
+      # __pow__(<frac>,<frac>)# for positive and negative f:=n/k
       if other.l[1] != 1:
           raise ValueError('!fraction.Fraction.__pow__() does not take fraction exponents')
+      if other.l[0] < 0:
+          return Fraction([
+          self.l[1]**abs(other.l[0]),
+          self.l[0]**abs(other.l[0])
+          ])
       return Fraction([
       self.l[0]**other.l[0],
       self.l[1]**other.l[0]
