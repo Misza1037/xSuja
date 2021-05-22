@@ -54,7 +54,12 @@ class Fraction:
     self.cut()
     other.cut()
     return Fraction([self.l[0]*other.l[0], self.l[1]*other.l[1]])
-
+  def __pow__(self, other):
+      if other.l[1] != 1: raise ValueError('!fraction.Fraction.__pow__() does not take fraction exponents')
+      return Fraction([
+      self.l[0]**other.l[0],
+      self.l[1]**other.l[0]
+      ])
   def cut(self):
     if self.l[1] < 0:
         self.l[0]*=-1
