@@ -9,7 +9,8 @@ class Polynomial:
         self.q_tab = self.zwroc_dzielniki(self.q)
         self.potencjalne_pierwiastki = self.zwroc_ilorazy(self.p_tab, self.q_tab)
         self.pierwiastki = self.zwroc_pierwiastki(self.potencjalne_pierwiastki)
-
+    def __len__(self):
+        return len(self.args)
     def zwroc_ilorazy(self, P, Q):
         tab = []
         print(P)
