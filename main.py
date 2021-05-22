@@ -1,3 +1,5 @@
+import 'fractions.py'
+
 class Polynomial:
     def __init__(self, args):
         self.args = args
