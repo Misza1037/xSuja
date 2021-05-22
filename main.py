@@ -55,5 +55,5 @@ class Polynomial:
 #a = Polynomial([-1, 0, 4])
 #print(a.pierwiastki)
 a = fv([-1, 2])
-n = fv([3, 1])
+n = fv([-3, 1])
 print(f'({a})^({n}) = {a**n}')
