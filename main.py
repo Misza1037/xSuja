@@ -46,3 +46,6 @@ class Polynomial:
 
 a = Polynomial([-1, 0, 4])
 print(a.pierwiastki)
+b = Fraction([17, 17])
+b.cut()
+print(b)
