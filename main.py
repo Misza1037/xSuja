@@ -45,8 +45,9 @@ class Polynomial:
         return sum
 
 
-a = Polynomial([-1, 0, 4])
-print(a.pierwiastki)
-b = fraction.Fraction([17, -17])
-b.cut()
-print(b)
+#a = Polynomial([-1, 0, 4])
+#print(a.pierwiastki)
+
+fracX = fraction.Fraction([-4, 1])
+fracY = fraction.Fraction([-7, 1])
+print(fracX+fracY)

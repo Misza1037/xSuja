@@ -3,11 +3,14 @@ def dc(n):
   r = []
   while k != 1:
     i = 2
-    while k%i!=0:
+    while abs(k)%i!=0 and abs(k) != 1:
+      #print(i)
+      #print(k)
+      #print()
       i+=1
     r.append(i)
     k = k//i
-  return r if len(r) != 0 else [1]
+  return r if r != [] else [1]
 
 
 def common(a,b):
@@ -22,7 +25,14 @@ class Fraction:
     self.l = l
   def __str__(self):
     self.cut()
-      return str(self.l[0])+'/'+str(self.l[1])
+    return str(self.l[0])+'/'+str(self.l[1])
+  def __add__(self, other):
+      r = [None, None]
+      r[0] = self.l[0]*other.l[1] + other.l[0]*self.l[1]
+      r[1] = self.l[1]*other.l[1]
+      r = Fraction(r)
+      r.cut()
+      return r
   def cut(self):
     if self.l[1] < 0:
         self.l[0]*=-1
@@ -31,7 +41,9 @@ class Fraction:
       self.l[0] = self.l[0]//self.l[1]
       self.l[1] = 1
       return self.l
-    n = common(dc(self.l[0]), dc(self.l[1]))
+    #negative = False
+    #if self.l[0] < 0: negative = True
+    n = common(dc(abs(self.l[0])), dc(abs(self.l[1])))
     if n == []: return self.l
     m = 1
     for i in n:
