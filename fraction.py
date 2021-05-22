@@ -26,13 +26,14 @@ class Fraction:
   def __str__(self):
     self.cut()
     return str(self.l[0])+'/'+str(self.l[1])
+  def eval(self):
+      return self.l[0] / self.l[1]
   def __add__(self, other):
       r = [None, None]
       r[0] = self.l[0]*other.l[1] + other.l[0]*self.l[1]
       r[1] = self.l[1]*other.l[1]
-      r = Fraction(r)
-      r.cut()
-      return r
+      k = Fraction(r)
+      return k.cut()
   def __neg__(self):
       t = [self.l]
       t.cut()
@@ -43,9 +44,8 @@ class Fraction:
       other.cut()
       r[0] = self.l[0]*other.l[1] - other.l[0]*self.l[1]
       r[1] = self.l[1]*other.l[1]
-      r = Fraction(r)
-      r.cut()
-      return r
+      k = Fraction(r)
+      return k.cut()
   def __truediv__(self, other):
       self.cut()
       other.cut()
@@ -62,7 +62,7 @@ class Fraction:
     if self.l[0]//self.l[1] == self.l[0]/self.l[1]:
       self.l[0] = self.l[0]//self.l[1]
       self.l[1] = 1
-      return Fraction(self.l)
+    return Fraction(self.l)
     #negative = False
     #if self.l[0] < 0: negative = True
     n = common(dc(abs(self.l[0])), dc(abs(self.l[1])))
