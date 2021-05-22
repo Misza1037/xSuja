@@ -33,6 +33,18 @@ class Fraction:
       r = Fraction(r)
       r.cut()
       return r
+  def __sub__(self, other):
+      r = [None, None]
+      r[0] = self.l[0]*other.l[1] - other.l[0]*self.l[1]
+      r[1] = self.l[1]*other.l[1]
+      r = Fraction(r)
+      r.cut()
+      return r
+  def __truediv__(self, other):
+      return Fraction([self.l[0]*other.l[1], self.l[1]*other.l[0]]).cut()
+  def __mul__(self, other):
+    return Fraction([self.l[0]*other.l[0], self.l[1]*other.l[1]]).cut()
+
   def cut(self):
     if self.l[1] < 0:
         self.l[0]*=-1
