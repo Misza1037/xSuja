@@ -1,5 +1,12 @@
-import fraction
-
+from fraction import Fraction as fv
+#######################################
+#
+#           możesz już używać ułamków
+#           n/k to fv([n,k])
+#           n = fv([1/3])
+#           n.eval() da Ci przybliżenie dziesiętne lepsze od normalnego
+#
+#######################################
 class Polynomial:
     def __init__(self, args):
         self.args = args
@@ -47,26 +54,3 @@ class Polynomial:
 
 #a = Polynomial([-1, 0, 4])
 #print(a.pierwiastki)
-
-X = fraction.Fraction([-4, 2])
-Y = fraction.Fraction([1, 3])
-testSet = [
-[[1,2],[3,4]],
-[[-5,6],[8,18]]
-]
-from random import randint as rand
-for i in range(100000):
-    tC = [[rand(-10,10), rand(-10,10)],[rand(-10,10), rand(-10,10)]]
-    if tC[0][1] != 0 and tC[1][0] != 0 and tC[1][1] != 0:
-      testSet.append(tC)
-for testCase in testSet:
-    test = [fraction.Fraction(testCase[0]), fraction.Fraction(testCase[1])]
-    expected = test[0].eval()/test[1].eval()
-    result   = (test[0]/test[1]).eval()
-    if abs(expected - result)>.0001:
-        print(test[0])
-        print(test[1])
-        print()
-#works for:
-#1/2, 1/3
-#-1/2, 1/3
