@@ -30,7 +30,6 @@ class Fraction:
     m = 1
     for i in n:
       m *= i
-    self.l[0] /= m
-    self.l[1] /= m
+    self.l[0] //= m
+    self.l[1] //= m
     return self.l
-      
