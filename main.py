@@ -48,6 +48,9 @@ class Polynomial:
 #a = Polynomial([-1, 0, 4])
 #print(a.pierwiastki)
 
-fracX = fraction.Fraction([-4, 1])
-fracY = fraction.Fraction([-7, 1])
-print(fracX+fracY)
+X = fraction.Fraction([11, 10])
+Y = fraction.Fraction([1, -10])
+print(f'{X} + {Y} = {X+Y}')
+print(f'{X} - {Y} = {X-Y}')
+print(f'{X} * {Y} = {X*Y}')
+print(f'{X} / {Y} = {X/Y}')
