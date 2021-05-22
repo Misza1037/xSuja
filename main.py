@@ -20,7 +20,7 @@ class Polynomial:
     def zwroc_dzielniki(self, a):
         tab = []
         if a < 0:
-            for i in range(a // 2 + 2, 0):
+            for i in range(a // 2 - 1, 0):
                 if a % i == 0: tab.append(i)
         elif a > 0:
             for i in range(1, a // 2 + 2):
@@ -42,5 +42,5 @@ class Polynomial:
         return sum
 
 
-a = Polynomial([-81, 0, 0, 0, 1])
+a = Polynomial([-1, 0, 4])
 print(a.pierwiastki)
