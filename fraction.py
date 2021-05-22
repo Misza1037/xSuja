@@ -10,8 +10,8 @@ def dc(n):
   return r if len(r) != 0 else [1]
 
 
-def common(a,b): 
-  c = [value for value in a if value in b] 
+def common(a,b):
+  c = [value for value in a if value in b]
   return c
 
 
@@ -20,13 +20,15 @@ class Fraction:
     if type(l) != list: raise TypeError('')
     if len(l) != 2: raise ValueError('')
     self.l = l
+  def __str__(self):
+      return str(self.l[0])+'/'+str(self.l[1])
   def cut(self):
     if self.l[0]//self.l[1] == self.l[0]/self.l[1]:
       self.l[0] = self.l[0]//self.l[1]
       self.l[1] = 1
       return self.l
     n = common(dc(self.l[0]), dc(self.l[1]))
-    if n == []: return self.l 
+    if n == []: return self.l
     m = 1
     for i in n:
       m *= i
