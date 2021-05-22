@@ -1,8 +1,16 @@
 class Polynomial:
   def __init__(self, *args):
     self.args = args
-  def __add__(self, other):
-    return Polynomial(list(map(sum()), zip(self.args, other.args)))
+    self.p = self.args[0]
+    self.q = self.args[-1]
+    self.p_tab = self.zwroc_dzielniki(self.p)
+    self.q_tab = self.zwroc_dzielniki(self.q)
+  
+  def zwroc_dzielniki(self, a):
+    tab = []
+    for i in range(1, a//2 + 1):
+      if a % i == 0: tab.append(i)
+    return tab
   
   def f(self, x):
         sum = 0
