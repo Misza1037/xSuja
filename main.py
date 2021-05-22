@@ -10,15 +10,21 @@ class Polynomial:
 
     def zwroc_ilorazy(self, P, Q):
         tab = []
-        for p, q in zip(P, Q):
-            tab.append(p / q)
+        print(P)
+        print(Q)
+        for p in P:
+            for q in Q:
+                tab.append(p / q)
         return tab
 
     def zwroc_dzielniki(self, a):
         tab = []
-        for i in range(1, a // 2 + 1):
-            if a % i == 0: tab.append(i)
-            print("lmao")
+        if a < 0:
+            for i in range(a // 2 + 2, 0):
+                if a % i == 0: tab.append(i)
+        elif a > 0:
+            for i in range(1, a // 2 + 2):
+                if a % i == 0: tab.append(i)
         return tab
 
     def zwroc_pierwiastki(self, a):
@@ -26,16 +32,15 @@ class Polynomial:
         for x in a:
             if self.f(x) == 0:
                 tab.append(x)
+                tab.append(-x)
         return tab
 
     def f(self, x):
         sum = 0
         for a in range(len(self.args)):
-            print(self.args)
             sum += x ** a * self.args[a]
         return sum
 
 
 a = Polynomial([-81, 0, 0, 0, 1])
-print(a.p_tab)
 print(a.pierwiastki)
